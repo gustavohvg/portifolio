@@ -7,8 +7,6 @@ use Illuminate\Http\Request;
 class SiteController extends Controller
 {
     public function index() {
-        $userFullName = "Gustavo Valentim";
-
-        return view("home", ["userFullName" => $userFullName]);
+        return view("home");
     }
 }

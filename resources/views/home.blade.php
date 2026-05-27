@@ -1,8 +1,3 @@
 <x-layout>
-    @if(isset($userFullName))
-        <x-slot:userFullName>{{ $userFullName }}</x-slot:userFullName>
-    @endif
-
-
-
+    <h1 class="text-3xl font-bold">Home</h1>
 </x-layout>

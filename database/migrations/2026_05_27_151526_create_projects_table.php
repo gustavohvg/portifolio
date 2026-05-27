@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            $table->string('title');
+            $table->text('description');
+            $table->string('thumbnail_url')->nullable();
+            $table->string('github_url')->nullable();
+            $table->string('demo_url')->nullable();
+            $table->boolean('is_featured')->default(false);
             $table->timestamps();
         });
     }

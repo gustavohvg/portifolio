@@ -8,15 +8,11 @@
 
     @vite('resources/css/app.css')
 </head>
-<body>
+<body style="display: flex; flex-direction: column; min-height: 100dvh;">
 
-<x-header>
-    @if(isset($userFullName))
-        <x-slot:userFullName>{{ $userFullName }}</x-slot:userFullName>
-    @endif
-</x-header>
+<x-navbar style="flex: 0"/>
 
-<main class="p-6">
+<main class="p-6" style="flex: 1;">
     @if ($slot->isEmpty())
         This is default content if the slot is empty.
     @else
@@ -24,7 +20,7 @@
     @endif
 </main>
 
-<x-footer></x-footer>
+<x-footer style="flex: 0"/>
 
 </body>
 </html>

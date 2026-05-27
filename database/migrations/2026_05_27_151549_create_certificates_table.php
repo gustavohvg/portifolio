@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('certificates', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            $table->string('title');
+            $table->string('institution');
+            $table->string('credential_url')->nullable();
+            $table->date('issued_at');
             $table->timestamps();
         });
     }
