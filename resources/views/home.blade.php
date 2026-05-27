@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<x-layout>
+    @if(isset($userFullName))
+        <x-slot:userFullName>{{ $userFullName }}</x-slot:userFullName>
+    @endif
 
-    <title>{{ config("app.name") }}</title>
 
-    @vite('resources/css/app.css')
-</head>
-<body>
 
-<h1 class="text-3xl font-bold underline">Muito bem-vindo, {{ $userFullName }}!</h1>
-
-</body>
-</html>
+</x-layout>
