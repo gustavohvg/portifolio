@@ -11,17 +11,20 @@
 
             {{-- Links centrais --}}
             <div class="hidden md:flex items-center gap-1">
-                <a href="{{ url('/') }}"
-                   class="text-slate-400 hover:text-white hover:bg-white/5 px-3 py-2 rounded-lg text-sm transition">
+                <a href="{{ route('home') }}" class="text-slate-400 hover:text-white hover:bg-white/5 px-3 py-2 rounded-lg text-sm transition">
                     Início
                 </a>
-                <a href="{{ url('/sobre') }}"
-                   class="text-slate-400 hover:text-white hover:bg-white/5 px-3 py-2 rounded-lg text-sm transition">
+                <a href="{{ route('home')  }}" class="text-slate-400 hover:text-white hover:bg-white/5 px-3 py-2 rounded-lg text-sm transition">
                     Sobre
                 </a>
-                <a href="{{ url('/contato') }}"
-                   class="text-slate-400 hover:text-white hover:bg-white/5 px-3 py-2 rounded-lg text-sm transition">
-                    Contato
+                <a href="{{ route('home')  }}" class="text-slate-400 hover:text-white hover:bg-white/5 px-3 py-2 rounded-lg text-sm transition">
+                    Skills
+                </a>
+                <a href="{{ route('home')  }}" class="text-slate-400 hover:text-white hover:bg-white/5 px-3 py-2 rounded-lg text-sm transition">
+                    Projetos
+                </a>
+                <a href="{{ route('home') }}" class="text-slate-400 hover:text-white hover:bg-white/5 px-3 py-2 rounded-lg text-sm transition">
+                    Certificados
                 </a>
             </div>
 
@@ -30,15 +33,8 @@
 
                 @guest
                     {{-- Visitante --}}
-                    <a href="{{ route('login') }}"
-                       class="text-slate-400 hover:text-white border border-slate-600 hover:border-slate-400
-                              px-4 py-1.5 rounded-lg text-sm transition">
-                        Entrar
-                    </a>
-                    <a href="{{ route('register') }}"
-                       class="bg-sky-400 hover:bg-sky-300 text-slate-900 font-medium
-                              px-4 py-1.5 rounded-lg text-sm transition">
-                        Cadastrar
+                    <a href="{{ route('contact') }}" class="bg-sky-400 hover:bg-sky-300 text-slate-900 font-medium px-4 py-1.5 rounded-lg text-sm transition text-uppercase">
+                        Fale comigo
                     </a>
                 @endguest
 
@@ -85,7 +81,7 @@
                                 </p>
                             </div>
 
-                            <a href="{{ route('profile.edit') }}"
+                            <a href="{{ route('my-account') }}"
                                class="flex items-center gap-2 px-4 py-2 text-sm text-slate-400
                                       hover:text-white hover:bg-white/5 transition">
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

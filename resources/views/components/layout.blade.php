@@ -6,7 +6,7 @@
 
     <title>{{ config("app.name") }}</title>
 
-    @vite('resources/css/app.css')
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body style="display: flex; flex-direction: column; min-height: 100dvh;">
 
@@ -22,5 +22,6 @@
 
 <x-footer style="flex: 0"/>
 
+@stack('scripts')
 </body>
 </html>
