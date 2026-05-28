@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Panel\PanelController;
+use App\Http\Controllers\Panel\ProjectController;
 use App\Http\Controllers\SiteController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,6 +18,12 @@ Route::middleware('guest')->group( function () {
 
 Route::middleware('auth')->group( function () {
     Route::post('/logout', [LoginController::class, 'logout'])->name('auth.logout');
-    Route::get('/dashboard', fn() => view('dashboard'))->name('site.dashboard');
-    Route::get('/my-account', fn() => view('my-account'))->name('site.my-account');
+
+    Route::prefix('panel')->name('panel.')->group(function () {
+        Route::get('/', [PanelController::class, 'index'])->name('index');
+        Route::get('/my-account', [PanelController::class, 'myAccount'])->name('my-account.index');
+
+        // Projetos — resource gera todas as rotas CRUD automaticamente
+        Route::resource('projects', ProjectController::class);
+    });
 });

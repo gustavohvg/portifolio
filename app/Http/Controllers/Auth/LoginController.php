@@ -12,7 +12,7 @@ class LoginController extends Controller
 {
     // página de login
     public function index() {
-        return view('login');
+        return view('site.login');
     }
 
     // loga o usuário
@@ -25,7 +25,7 @@ class LoginController extends Controller
         if (Auth::attempt($credentials, $remember)) {
             request()->session()->regenerate();
 
-            return redirect()->intended(route('site.dashboard'));
+            return redirect()->intended(route('panel.index'));
         }
 
         // se login incorreto retorna para a página de login com uma mensagem de erro

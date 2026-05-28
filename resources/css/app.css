@@ -11,3 +11,8 @@
     --font-sans: 'Inter', sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+body {
+    background-color: #0f172a;
+    color: #e2e8f0;
+}

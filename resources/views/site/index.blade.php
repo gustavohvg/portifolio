@@ -1,10 +1,6 @@
 <x-layout style="background:#0f172a; padding: 0;" class="text-slate-100 flex flex-col min-h-screen">
     @push('styles')
         <style>
-            body {
-                background-color: #0f172a;
-                color: #e2e8f0;
-            }
             main {
                 padding: 0;
             }
