@@ -19,12 +19,12 @@ class ProjectSeeder extends Seeder
         $projects = [
             [
                 'title'         => 'Portfólio Pessoal',
-                'description'   => 'Site de portfólio pessoal desenvolvido com Laravel 13, Tailwind CSS e JavaScript. Conta com painel administrativo para gerenciar projetos, skills e certificados.',
+                'description'   => 'Site de portfólio pessoal desenvolvido com Laravel 13. Conta com painel administrativo para gerenciar projetos, skills e certificados.',
                 'github_url'    => 'https://github.com/gustavohvg/portifolio',
                 'demo_url'      => null,
                 'thumbnail_url' => null,
                 'is_featured'   => true,
-                'tags'          => ['Laravel', 'PHP', 'Tailwind CSS', 'JavaScript', 'MySQL'],
+                'tags'          => ['Laravel', 'PHP', 'Tailwind CSS', 'JavaScript', 'CSS', 'HTML', 'MySQL'],
             ],
             [
                 'title'         => 'Assist4us',
