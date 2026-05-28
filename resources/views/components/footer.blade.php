@@ -7,7 +7,7 @@
 
             {{-- Coluna da marca (ocupa 2 colunas no lg) --}}
             <div class="lg:col-span-2">
-                <a href="{{ route('home') }}" class="flex items-center gap-2 text-white font-semibold text-lg tracking-tight w-fit">
+                <a href="{{ route('site.home') }}" class="flex items-center gap-2 text-white font-semibold text-lg tracking-tight w-fit">
                     <span class="w-2 h-2 rounded-full bg-sky-400"></span>
                     {{ config("app.name") }}
                 </a>
@@ -43,12 +43,12 @@
             {{-- Produto --}}
             <div class="lg:col-span-3">
                 <ul class="lg:text-right space-y-2.5">
-                    <li><a href="{{route('home')}}" class="text-slate-500 hover:text-slate-200 text-sm transition">Início</a></li>
-                    <li><a href="{{route('home')}}" class="text-slate-500 hover:text-slate-200 text-sm transition">Sobre</a></li>
-                    <li><a href="{{route('home')}}" class="text-slate-500 hover:text-slate-200 text-sm transition">Skills</a></li>
-                    <li><a href="{{route('home')}}" class="text-slate-500 hover:text-slate-200 text-sm transition">Projetos</a></li>
-                    <li><a href="{{route('home')}}" class="text-slate-500 hover:text-slate-200 text-sm transition">Certificados</a></li>
-                    <li><a href="{{route('contact')}}" class="text-slate-500 hover:text-slate-200 text-sm transition">Contato</a></li>
+                    <li><a href="{{route('site.home')}}" class="text-slate-500 hover:text-slate-200 text-sm transition">Início</a></li>
+                    <li><a href="{{route('site.home')}}" class="text-slate-500 hover:text-slate-200 text-sm transition">Sobre</a></li>
+                    <li><a href="{{route('site.home')}}" class="text-slate-500 hover:text-slate-200 text-sm transition">Skills</a></li>
+                    <li><a href="{{route('site.home')}}" class="text-slate-500 hover:text-slate-200 text-sm transition">Projetos</a></li>
+                    <li><a href="{{route('site.home')}}" class="text-slate-500 hover:text-slate-200 text-sm transition">Certificados</a></li>
+                    <li><a href="{{route('site.contact')}}" class="text-slate-500 hover:text-slate-200 text-sm transition">Contato</a></li>
                     <li><a href="{{route('login')}}" class="text-slate-500 hover:text-slate-200 text-sm transition">Login</a></li>
                 </ul>
             </div>

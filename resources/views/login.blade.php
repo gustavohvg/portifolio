@@ -1,4 +1,12 @@
 <x-layout>
+    @push('styles')
+        <style>
+            main {
+                all: unset;
+            }
+        </style>
+    @endpush
+
     <div class="min-h-[80vh] flex items-center justify-center px-4 py-10">
         <div class="w-full max-w-md rounded-3xl border border-zinc-200 bg-white p-8 shadow-sm">
 
@@ -14,7 +22,7 @@
             </div>
 
             <!-- Formulário -->
-            <form action="{{ route("login") }}" method="POST" class="space-y-5">
+            <form action="{{ route("auth.login") }}" method="POST" class="space-y-5">
                 @csrf
 
                 <!-- E-mail -->
@@ -23,7 +31,14 @@
                         E-mail
                     </label>
 
-                    <input type="email" id="email" name="email" placeholder="voce@exemplo.com" class="w-full rounded-2xl border border-zinc-300 bg-white px-4 py-3 text-sm text-zinc-900 placeholder:text-zinc-400 outline-none transition focus:border-black focus:ring-4 focus:ring-zinc-100">
+                    <input type="email" id="email" name="email" value="{{ old('email') }}" placeholder="voce@exemplo.com" class="w-full rounded-2xl border @error('email') border-red-300 @else border-zinc-300 @enderror  bg-white px-4 py-3 text-sm text-zinc-900 placeholder:text-zinc-400 outline-none transition focus:border-black focus:ring-4 focus:ring-zinc-100">
+
+                    @error('email')
+                        <p class="text-red-500 text-sm mt-2">
+                            {{ $message }}
+                        </p>
+                    @enderror
+
                 </div>
 
                 <!-- Senha -->
@@ -39,7 +54,7 @@
                     </div>
 
                     <div class="relative">
-                        <input type="password" id="password" name="password" placeholder="••••••••" class="w-full rounded-2xl border border-zinc-300 bg-white px-4 py-3 pr-12 text-sm text-zinc-900 placeholder:text-zinc-400 outline-none transition focus:border-black focus:ring-4 focus:ring-zinc-100">
+                        <input type="password" id="password" name="password" placeholder="••••••••" class="w-full rounded-2xl border @error('password') border-red-300 @else border-zinc-300 @enderror bg-white px-4 py-3 pr-12 text-sm text-zinc-900 placeholder:text-zinc-400 outline-none transition focus:border-black focus:ring-4 focus:ring-zinc-100">
 
                         <button type="button" id="togglePassword" class="absolute inset-y-0 right-0 flex items-center pr-4 text-zinc-400 transition hover:text-zinc-700">
                             <!-- Eye Icon -->
@@ -57,13 +72,19 @@
                             </svg>
                         </button>
                     </div>
+
+                    @error('password')
+                    <p class="text-red-500 text-sm mt-2">
+                        {{ $message }}
+                    </p>
+                    @enderror
                 </div>
 
                 <!-- Lembrar de mim -->
                 <label class="group flex cursor-pointer items-center gap-3">
 
                     <div class="relative">
-                        <input type="checkbox" name="remember_me" class="peer sr-only">
+                        <input type="checkbox" name="remember_me" class="peer sr-only" {{ old('remember_me') ? 'checked' : '' }}>
 
                         <div class="flex h-5 w-5 items-center justify-center rounded-md border border-zinc-300 bg-white transition-all duration-200 peer-checked:border-black peer-checked:bg-black peer-focus:ring-4 peer-focus:ring-zinc-100">
                             <!-- Check Icon -->
@@ -83,8 +104,10 @@
                     Entrar
                 </button>
 
-                @error('email')
-                <p class="mt-1.5 text-sm text-red-400">{{ $message }}</p>
+                @error('auth')
+                <p class="text-red-500 text-sm mt-2">
+                    {{ $message }}
+                </p>
                 @enderror
             </form>
         </div>
